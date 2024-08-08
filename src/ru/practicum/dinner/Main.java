@@ -59,7 +59,7 @@ public class Main {
 
         int numberOfCombos = 0;
 
-        do {
+        while (!(numberOfCombos > 0)){
             try {
                 cc.printlnBlue("Введите количество наборов, которые нужно сгенерировать:");
                 numberOfCombos = scanner.nextInt();
@@ -71,8 +71,7 @@ public class Main {
                 cc.printlnRed("Некорректный ввод. Ожидается целое положительное число");
                 scanner.nextLine();
             }
-        } while (!(numberOfCombos > 0));
-
+        }
 
         cc.printlnBlue("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
         String nextItem = " ";
@@ -88,7 +87,7 @@ public class Main {
             }
         }
 
-        if (combinations.size() == 0) {
+        if (combinations.isEmpty()) {
             cc.printlnRed("Вы не указали ни одного типа блюд");
             return;
         }
